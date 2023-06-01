@@ -1,0 +1,188 @@
+.masterPage {
+  justify-content: center;
+  .masterPage-contenedor {
+    background-image: url("https://i.pinimg.com/originals/09/72/c4/0972c48c397941eac799b6d81c47980f.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    .masterPage-dia {
+      padding-top: 1%;
+      padding-left: 25px;
+      font-size: 1.4rem;
+      font-weight: bolder;
+      color: white;
+    }
+    .masterPage-temperatura {
+      display: block;
+      display: flex;
+      justify-content: center;
+      font-size: 4rem;
+      font-weight: bolder;
+      margin-top: 50%;
+      color: white;
+    }
+    .masterPage-termica {
+      display: block;
+      display: flex;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bolder;
+      color: white;
+    }
+
+    .masterPage-location {
+      display: flex;
+      justify-content: end;
+      color: white;
+      .icon-location {
+        margin-top: 60%;
+      }
+      .masterPage-ciudad {
+        font-size: 2rem;
+        font-weight: bolder;
+        justify-content: end;
+        margin-right: 10%;
+        color: white;
+        margin-top: 60%;
+      }
+    }
+  }
+
+  .masterPage-datos {
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    .masterPage-datos-datos {
+      background: #74ebd5;
+      background: -webkit-linear-gradient(to right, #acb6e5, #74ebd5);
+      background: linear-gradient(to right, #acb6e5, #74ebd5);
+
+      border-radius: 40px;
+      width: 30%;
+      padding-top: 16px;
+      padding-bottom: 16px;
+
+      .icon-viento {
+        margin-left: 18%;
+      }
+      span {
+        margin-left: 18%;
+        margin-top: 2%;
+        font-weight: bolder;
+        color: #0a173b;
+        display: block;
+      }
+    }
+  }
+
+  .masterPage-hoy {
+    background-color: white;
+    h2 {
+      color: black;
+      text-align: center;
+      margin-top: 2%;
+      margin-bottom: 3%;
+    }
+  }
+
+  .masterPage-newCard {
+    width: 98%;
+    max-width: 424px;
+    max-height: 233px;
+    margin: auto;
+    background-color: black;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .masterPage-newCard-arriba {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      img {
+        width: 22%;
+        height: auto;
+      }
+      .masterPage-newCard-arriba-contenedor {
+        span {
+          color: gray;
+          font-size: 0.7rem;
+          font-weight: 700;
+        }
+        p {
+          display: flex;
+          align-items: center;
+          color: white;
+          font-weight: bolder;
+          font-size: 1.1rem;
+        }
+      }
+      .temp-card {
+        display: flex;
+        align-items: center;
+        margin-left: 8%;
+        color: white;
+        font-size: 2.3rem;
+        font-weight: bolder;
+      }
+    }
+
+    .masterPage-newCard-abajo {
+      display: flex;
+      justify-content: space-evenly;
+      .masterPage-newCard-abajo-div {
+        display: flex;
+        display: block;
+        justify-content: center;
+        .icon-react {
+          background-color: white;
+          padding: 4px;
+          border-radius: 50px;
+          margin-left: 30%;
+        }
+        span {
+          display: block;
+          color: gray;
+          font-size: 0.8rem;
+          font-weight: 700;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 500px) {
+    .masterPage-contenedor {
+      background-size: contain;
+      width: 30%;
+      height: 50vw;
+      .masterPage-dia {
+        color: yellow;
+      }
+      .masterPage-temperatura {
+        color: yellow;
+      }
+      .masterPage-termica {
+        color: yellow;
+      }
+      .masterPage-location {
+        .masterPage-ciudad {
+          margin-top: 1%;
+          color: yellow;
+        }
+        .icon-location {
+          margin-top: 1%;
+          color: yellow;
+        }
+      }
+    }
+  }
+  
+}

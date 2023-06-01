@@ -1,0 +1,151 @@
+.contenedor-forecast {
+  .forecast-today-weekly {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-bottom: 14px;
+    margin-top: 14px;
+
+    .forecast-today {
+      p {
+        font-size: 1.6rem;
+        font-weight: bolder;
+        color: white;
+      }
+    }
+    .forecast-today:hover {
+      transition: 0.9s;
+      background-color: yellow;
+      p {
+        color: black;
+      }
+    }
+    .forecast-weekly {
+      p {
+        font-size: 1.6rem;
+        font-weight: bolder;
+        color: white;
+      }
+    }
+    .forecast-weekly:hover {
+      transition: 0.9s;
+      background-color: yellow;
+      p {
+        color: black;
+      }
+    }
+  }
+
+  .contenedor-porHora {
+    display: flex;
+    overflow-x: scroll;
+    .contenedor-contenedor {
+      background-color: #f2fdff;
+      border-radius: 40px;
+      margin-left: 8px;
+      margin-right: 8px;
+      .contenedor-card-forecast {
+        width: 180px;
+        height: 230px;
+        .div-card-hora {
+          .card-hora {
+            display: flex;
+            justify-content: center;
+            color: #373e6a;
+            font-weight: bolder;
+            margin-top: 18px;
+            font-size: 1.2rem;
+            font-family: Roboto;
+          }
+        }
+        .div-card-dia{
+          .card-dia{
+            display: flex;
+            justify-content: center;
+            color: #373e6a;
+            font-size: 1.2rem;
+            font-weight: bolder;
+            font-family: Roboto;
+            position: relative; bottom: 14px;
+          }
+        }
+        .div-card-imagen {
+          img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            height: auto;
+            width: 60px;
+            position: relative; bottom: 14px;
+          }
+        }
+        .div-card-temperatura {
+          .card-temperatura {
+            display: flex;
+            justify-content: center;
+            color: #373e6a;
+            font-weight: bolder;
+            font-size: 1.4rem;
+            font-family: Roboto;
+          }
+        }
+        .div-card-location {
+          .card-location {
+            display: flex;
+            justify-content: center;
+            color: #373e6a;
+            font-weight: bolder;
+            font-family: Roboto;
+            position: relative; bottom: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  // background-color: white;
+  // display: flex;
+  // justify-content: space-between;
+  // padding-left: 25px;
+  // padding-right: 25px;
+  // padding-top: 10px;
+  // padding-bottom: 10px;
+
+  // .contenedor-forecast-porHora {
+  //   .dia {
+  //     display: block;
+  //     font-size: 1.1rem;
+  //     font-weight: bolder;
+  //     color: #716f7b;
+  //     margin-bottom: 6px;
+  //   }
+  //   .hora {
+  //     display: block;
+  //     font-size: 1rem;
+  //     font-weight: 600;
+  //     color: #e0e0e0;
+  //   }
+  // }
+
+  // .contenedor-forecast-temperatura {
+  //   display: flex;
+  //   align-items: center;
+  //   padding-top: 10px;
+  //   p {
+  //     color: #716f7b;
+  //     font-size: 1.2rem;
+  //     font-weight: 600;
+  //     font-family: sans-serif;
+  //   }
+  // }
+
+  // .contenedor-forecast-icon {
+  //   display: flex;
+  //   align-items: center;
+  //   img {
+  //     height: auto;
+  //     width: 44px;
+  //   }
+  // }
+}

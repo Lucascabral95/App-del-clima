@@ -1,0 +1,142 @@
+.contenedor-navbar {
+  display: block;
+  margin-top: 1%;
+  margin-bottom: 4%;
+  margin-top: 5%;
+  * {
+    text-decoration: none;
+    list-style: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      margin-left: 1%;
+      p {
+        position: relative;
+        top: 24%;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-left: 10px;
+        font-family: "Segoe UI";
+      }
+    }
+
+    .buscador {
+      background-color: #f4f5fb;
+      border-radius: 50px;
+      padding-left: 1%;
+      display: flex;
+      align-items: center;
+      width: 20%;
+      position: relative;
+      right: 2%;
+      input {
+        background-color: #f4f5fb;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        overflow: hidden;
+      }
+      .buscador-search {
+        display: flex;
+        padding-left: 1%;
+        margin-right: 2%;
+      }
+    }
+
+    .logo {
+      display: flex;
+      img {
+        width: 14%;
+        height: auto;
+      }
+      h1 {
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: 10%;
+        margin-left: 2%;
+        font-family: Roboto;
+      }
+    }
+
+    .dropbox-navbar {
+      width: 100%;
+      height: 100vw !important;
+      background-color: wheat;
+      .dropbox-navbar-contenido {
+        p {
+          display: block;
+          font-size: 3rem;
+          color: blueviolet;
+          font-weight: 600;
+          font-family: "Times New Roman", Times, serif;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .navbar p {
+      display: none;
+    }
+    .buscador {
+      width: 40% !important;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .menu-hamburguesa {
+      display: block !important;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .logo {
+      display: flex;
+      justify-content: end;
+      margin-right: 10px;
+      img {
+        height: auto;
+        width: auto;
+      }
+    }
+    nav {
+      padding-left: 20px;
+    }
+    .buscador {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 1570px){
+    .custom-shape-divider-top-1685652124{
+      display: none;
+    }
+  }
+}
+// BORDER SUPERIOR DE LA APP DEL CLIMA , EL CODIGO HTML ESTA METIDO EN EL RETURNO DEL COMPONENTE NAVBAR
+.custom-shape-divider-top-1685652124 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1685652124 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 98px;
+}
+
+.custom-shape-divider-top-1685652124 .shape-fill {
+  fill: #020063;
+}

@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { WeatherProvider } from './Context/WeatherContext.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import Navbar from './components/Navbar/Navbar.js';
+// import MasterPage from './components/MasterPage/MasterPage.js';
+import ForecastHourly from './components/Forecast/ForecastHourly.js';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // <div style={{ background: "#1A1B1E" }}>
+    <div style={{ background: "white" }}>
+      <WeatherProvider>
+
+
+        <Navbar />
+        {/* <MasterPage /> */}
+        <ForecastHourly /> 
+
+      </WeatherProvider>
     </div>
   );
 }
