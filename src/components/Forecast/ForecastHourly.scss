@@ -47,7 +47,7 @@
       margin-right: 8px;
       .contenedor-card-forecast {
         width: 180px;
-        height: 230px;
+        height: 250px;
         .div-card-hora {
           .card-hora {
             display: flex;
@@ -104,48 +104,21 @@
     }
   }
 
-  // background-color: white;
-  // display: flex;
-  // justify-content: space-between;
-  // padding-left: 25px;
-  // padding-right: 25px;
-  // padding-top: 10px;
-  // padding-bottom: 10px;
-
-  // .contenedor-forecast-porHora {
-  //   .dia {
-  //     display: block;
-  //     font-size: 1.1rem;
-  //     font-weight: bolder;
-  //     color: #716f7b;
-  //     margin-bottom: 6px;
-  //   }
-  //   .hora {
-  //     display: block;
-  //     font-size: 1rem;
-  //     font-weight: 600;
-  //     color: #e0e0e0;
-  //   }
-  // }
-
-  // .contenedor-forecast-temperatura {
-  //   display: flex;
-  //   align-items: center;
-  //   padding-top: 10px;
-  //   p {
-  //     color: #716f7b;
-  //     font-size: 1.2rem;
-  //     font-weight: 600;
-  //     font-family: sans-serif;
-  //   }
-  // }
-
-  // .contenedor-forecast-icon {
-  //   display: flex;
-  //   align-items: center;
-  //   img {
-  //     height: auto;
-  //     width: 44px;
-  //   }
-  // }
+  .porcentRain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .porcentRain-interior{
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: solid black 4px;
+      background-color: white;
+      .porcentRain-adentro{
+        background-color: red;
+      }
+    }
+  }
 }

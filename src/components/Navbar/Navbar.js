@@ -29,8 +29,8 @@ const Navbar = () => {
             <FaWindowClose size={38} color="black" onClick={handleMenu} />
             <div className="dropbox-navbar-contenido">
               <div className="buscador2">
-                <BsSearch size={22} color="black" className="buscador-search" />
-                <input type="text" placeholder="Buscar..." size={40} onChange={(event) => setLocation(event.target.value)} />
+                <BsSearch size={22} color="black" className="buscador-search2" />
+                <input className="input2" type="text" placeholder="Buscar..." size={40} onChange={(event) => setLocation(event.target.value)} />
               </div>
               <p>Dashboard</p>
               <p>Acerca de Nosotros</p>

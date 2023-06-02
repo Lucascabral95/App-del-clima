@@ -66,19 +66,44 @@
     }
 
     .dropbox-navbar {
-      width: 100%;
+      position: relative; right: 22px; bottom: 22px;
+      width: 100% ;
       height: 100vw !important;
       background-color: wheat;
       .dropbox-navbar-contenido {
         p {
           display: block;
-          font-size: 3rem;
+          font-size: 1.8rem;
           color: blueviolet;
           font-weight: 600;
-          font-family: "Times New Roman", Times, serif;
+          font-family: Roboto;
+          padding-left: 20px;
+          padding-top: 36px;
+        }
+        .buscador2{
+          background-color: #f4f5fb;
+          display: flex;
+          padding: 10px;
+          margin-top: 15px;
+          margin-left: 15px;
+          border-radius: 500px;
+          width: 80%;
+          
+          .buscador-search2{
+            display: flex;
+    
+          }  
+          .input2{
+            background-color: #f4f5fb;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            overflow: hidden;            
+          }
         }
       }
     }
+
   }
 
   @media (max-width: 1000px) {

@@ -8,7 +8,8 @@ import { BsFillCloudRainFill } from "react-icons/bs"
 
 const MasterPage = () => {
 
-    const { dia, temperatura, termica, ciudad, tiempo, humedad, viento, sky } = useContext(WeatherContext)
+    const { dia, temperatura, termica, ciudad, tiempo, humedad, viento, sky, precipitacion,
+    estadoDelTiempo } = useContext(WeatherContext)
 
     return (
         <div className="masterPage">
@@ -45,8 +46,7 @@ const MasterPage = () => {
 
             <div className="masterPage-newCard">
                 <div className="masterPage-newCard-arriba">
-                    {/* <img src="/sol-ui.png" alt="Icono del clima" /> */}
-                    <img src="/luna-ui.png" alt="Icono del clima" />
+                    <img src={estadoDelTiempo} alt="Icono del clima" />
                     <div className="masterPage-newCard-arriba-contenedor">
                         <span> {dia} </span>
                         <p> {sky} </p>
@@ -71,7 +71,7 @@ const MasterPage = () => {
                     <div className="masterPage-newCard-abajo-div">
                          <BsFillCloudRainFill size={40} color="blue" className="icon-react" />
                         <span>Precipitación</span>
-                        <span> 100% </span>
+                        <span> {precipitacion}% </span>
                     </div>
                 </div>
             </div>
