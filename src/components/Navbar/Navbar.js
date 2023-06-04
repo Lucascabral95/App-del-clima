@@ -43,7 +43,7 @@ const Navbar = () => {
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize(); // Verificar el estado inicial al cargar la página
+    handleResize(); 
 
     return () => {
       window.removeEventListener('resize', handleResize);
