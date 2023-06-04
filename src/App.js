@@ -5,23 +5,24 @@ import Navbar from './components/Navbar/Navbar.js';
 import MasterPage from './components/MasterPage/MasterPage.js';
 import ForecastHourly from './components/Forecast/ForecastHourly.js';
 
-
 function App() {
 
+  
   const horario = new Date()
   const horarioActual = horario.getHours()
-
-
+  
   return (
-    // <div style={{ background: "#1A1B1E" }}>
-        <div style={horarioActual > 6 && horarioActual <= 19  ? { background: "#C3E1FD" } : { background: "white" }}>
+    <div style={horarioActual > 6 && horarioActual <= 19 ? { background: "#E2C6F6" } : { background: "white" }}>
 
-      <WeatherProvider>
+      <WeatherProvider >
 
 
-        <Navbar />
-        <MasterPage />
-        <ForecastHourly />
+          <Navbar />
+          <ForecastHourly />
+        {/* <MasterPage /> */}
+
+
+
 
       </WeatherProvider>
     </div>

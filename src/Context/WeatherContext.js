@@ -18,6 +18,7 @@ export const WeatherProvider = ({ children }) => {
     const [forecastHourly, setForecastHourly] = useState([])
     const [precipitacion, setPrecipitaicon] = useState("")
     const [estadoDelTiempo, setEstadoDelTiempo] = useState("")
+    const [bottomSidebar, setBottomSidebar] = useState(true)
 
     //LLAMADA PARA DATOS DIARIOS
     const fechaActual = new Date();
@@ -191,7 +192,9 @@ export const WeatherProvider = ({ children }) => {
             precipitacion,
             setPrecipitaicon,
             estadoDelTiempo,
-            setEstadoDelTiempo
+            setEstadoDelTiempo, 
+            bottomSidebar, 
+            setBottomSidebar
         }}>
             {children}
         </WeatherContext.Provider>

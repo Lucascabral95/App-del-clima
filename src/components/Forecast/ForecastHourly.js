@@ -3,38 +3,16 @@ import { useContext, useState } from "react";
 import { WeatherContext } from "../../Context/WeatherContext.js";
 
 const Forecast = () => {
-    const { forecastHourly, location, precipitacion } = useContext(WeatherContext);
+    const { forecastHourly, location, precipitacion, bottomSidebar } = useContext(WeatherContext);
 
 
     return (
-        <div className="contenedor-forecast">
+        <div className="contenedor-forecast" >
 
-            {/* <div className="forecast-today-weekly">
-                <div className="forecast-today">
-                    <p>Today</p>
-                </div>
-
-                <div className="forecast-weekly">
-                    <p>Weekly</p>
-                </div>
-            </div> */}
-
-            <div className="contenedor-porHora">
+            <div className="contenedor-porHora" style={bottomSidebar ? {marginLeft: "90px"} : {marginLeft: "270px", width: "calc(100% - 270px)"}} >
                 {forecastHourly.map((item, index) => (
                     <div className="contenedor-contenedor" key={index}>
 
-                        {/* <div className="contenedor-forecast-porHora">
-                            <span className="dia">{item.fecha}</span>
-                            <span className="hora">{item.hora}</span>
-                            </div>
-                            
-                            <div className="contenedor-forecast-temperatura">
-                            <p>{item.temperatura}°C</p>
-                            </div>
-                            
-                            <div className="contenedor-forecast-icon">
-                            <img src={item.climaSi} alt="Icono del clima" />
-                        </div> */}
                         <div className="contenedor-card-forecast">
                             <div className="div-card-hora">
                                 <p className="card-hora">{item.hora}</p>
@@ -62,15 +40,11 @@ const Forecast = () => {
 
                 <div className="porcentRain-interior" >
                     <div className="porcentRain-adentro" style={{ height: `${precipitacion}%` }}>
-
-
                     </div>
                 </div>
 
             </div>
-
-
-
+            
         </div>
     );
 };

@@ -1,29 +1,116 @@
 .contenedor-navbar {
   display: block;
-  margin-top: 1%;
   margin-bottom: 4%;
   margin-top: 5%;
+
   * {
     text-decoration: none;
     list-style: none;
   }
 
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    // width: 100px;
+    background-color: #0f1827;
+    padding-top: 54px;
+    border-radius: 14px;
+
+    .contenedor-sidebar-logo {
+      // display: flex;
+      // justify-content: center;
+      margin-left: 16px;
+      .sidebar-logo {
+        margin-top: 32px;
+        display: flex;
+        img {
+          width: 40px;
+          height: 46px;
+          background-color: white;
+          border-radius: 500px;
+          padding: 5px;
+        }
+        p {
+          padding-top: 6px;
+          padding-left: 6px;
+          align-items: center;
+          font-weight: 700;
+          font-size: 2rem;
+          font-family: Roboto;
+          color: white;
+        }
+      }
+    }
+    .contenedor-buscador2 {
+      display: flex;
+      justify-content: center;
+      .buscador2 {
+        display: flex;
+        background-color: #e7e7e9;
+        border-radius: 500px;
+        width: 84%;
+        margin-top: 1.4vw;
+        margin-bottom: 2vw;
+        input {
+          align-items: center;
+          background-color: #e7e7e9;
+          border: none;
+          border-radius: 50px;
+          outline: none;
+        }
+        .search2 {
+          margin: 10px;
+          align-items: center;
+          margin-right: 4px;
+        }
+      }
+    }
+    .contenedor-sidebar-secciones {
+      .sidebar-secciones {
+        margin-bottom: 15%;
+        margin-left: 26px;
+        bottom: 3px;
+        p {
+          color: red;
+          font-family: Roboto;
+          font-weight: 600;
+          font-size: 1.3rem;
+          margin-left: 4px;
+          position: relative;
+          margin-bottom: 15%;
+          bottom: 3px;
+        }
+      }
+    }
+    .contenedor-sidebar-bottom {
+      display: flex;
+      margin-left: 26px;
+      margin-top: 140%;
+      .sidebar-bottom {
+        display: flex;
+        p {
+          color: red;
+          position: relative;
+          bottom: 3px;
+          margin-left: 4px;
+          font-size: 1.4rem;
+          font-weight: 600;
+          font-family: Roboto;
+        }
+      }
+    }
+  }
+
   nav {
+    background-color: white;
     display: flex;
     justify-content: space-between;
 
-    .navbar {
-      display: flex;
-      align-items: center;
-      margin-left: 1%;
-      p {
-        position: relative;
-        top: 24%;
-        font-size: 1.1rem;
-        font-weight: bold;
-        margin-left: 10px;
-        font-family: "Segoe UI";
-      }
+    .menuu-hambuguesa {
+      font-size: 40px;
     }
 
     .buscador {
@@ -38,6 +125,7 @@
       input {
         background-color: #f4f5fb;
         border: none;
+        border-radius: 50px;
         box-shadow: none;
         outline: none;
         overflow: hidden;
@@ -66,8 +154,10 @@
     }
 
     .dropbox-navbar {
-      position: relative; right: 22px; bottom: 22px;
-      width: 100% ;
+      position: relative;
+      right: 22px;
+      bottom: 22px;
+      width: 100%;
       height: 100vw !important;
       background-color: wheat;
       .dropbox-navbar-contenido {
@@ -80,7 +170,7 @@
           padding-left: 20px;
           padding-top: 36px;
         }
-        .buscador2{
+        .buscador2 {
           background-color: #f4f5fb;
           display: flex;
           padding: 10px;
@@ -88,64 +178,175 @@
           margin-left: 15px;
           border-radius: 500px;
           width: 80%;
-          
-          .buscador-search2{
+
+          .buscador-search2 {
             display: flex;
-    
-          }  
-          .input2{
+          }
+          .input2 {
             background-color: #f4f5fb;
             border: none;
             box-shadow: none;
             outline: none;
-            overflow: hidden;            
+            overflow: hidden;
           }
         }
       }
     }
-
   }
 
-  @media (max-width: 1000px) {
-    .navbar p {
-      display: none;
-    }
-    .buscador {
-      width: 40% !important;
-    }
-  }
+  // SIDEBAR MOBILE
+  .sidebar-responsive {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #0f1827;
+    overflow-y: scroll;
+    z-index: 999;
 
-  @media (max-width: 1000px) {
-    .menu-hamburguesa {
-      display: block !important;
-    }
-  }
-
-  @media (max-width: 700px) {
-    .logo {
+    .contenedor-sidebar-logo {
       display: flex;
-      justify-content: end;
-      margin-right: 10px;
-      img {
-        height: auto;
-        width: auto;
+      justify-content: center;
+      .sidebar-logo {
+        margin-top: 32px;
+        display: flex;
+        img {
+          width: 40px;
+          height: 52px;
+          background-color: white;
+          border-radius: 500px;
+          padding: 6px;
+        }
+        p {
+          padding-top: 6px;
+          padding-left: 6px;
+          align-items: center;
+          font-weight: 700;
+          font-size: 2rem;
+          font-family: Roboto;
+          color: white;
+        }
       }
     }
-    nav {
-      padding-left: 20px;
+    .contenedor-buscador2 {
+      display: flex;
+      justify-content: center;
+      .buscador2 {
+        display: flex;
+        background-color: #e7e7e9;
+        border-radius: 500px;
+        width: 84%;
+        margin-top: 1.4vw;
+        margin-bottom: 2vw;
+        input {
+          align-items: center;
+          background-color: #e7e7e9;
+          border: none;
+          outline: none;
+        }
+        .search2 {
+          margin: 10px;
+          align-items: center;
+          margin-right: 4px;
+        }
+      }
     }
-    .buscador {
-      display: none !important;
+    .contenedor-sidebar-secciones {
+      .sidebar-secciones {
+        margin-left: 26px;
+        p {
+          color: red;
+          font-family: Roboto;
+          font-weight: 600;
+          font-size: 1.1rem;
+        }
+      }
+    }
+    .contenedor-sidebar-bottom {
+      display: flex;
+      margin-left: 26px;
+      .sidebar-bottom {
+        display: flex;
+        align-items: end;
+        p {
+          color: red;
+          font-size: 1.1rem;
+          font-weight: 600;
+          font-family: Roboto;
+        }
+      }
     }
   }
 
-  @media (max-width: 1570px){
-    .custom-shape-divider-top-1685652124{
+  @media (max-width: 999px) {
+    nav {
+      display: flex;
+      justify-content: space-between;
+      margin: 0% !important;
+      .logo {
+        display: flex;
+        justify-content: end;
+        padding-right: 2%;
+      }
+      .buscador {
+        display: flex;
+        justify-content: center;
+      }
+      .menuu-hambuguesa{
+        display: block !important;
+        margin-left: 1%;
+      }
+    }
+  }
+
+  @media (min-width: 425px) and (max-width: 999px) {
+    .sidebar {
       display: none;
+    }
+    .sidebar-responsive {
+      .contenedor-sidebar-secciones {
+        .sidebar-secciones {
+          .sidebar-secciones-div {
+            display: flex;
+            align-items: center;
+            p {
+              margin-top: 8%;
+              font-size: 2rem;
+            }
+            .side-icon {
+              margin-left: 34px;
+              margin-right: 20px;
+              position: relative;
+              top: 20px;
+              align-items: center;
+              font-size: 40px;
+            }
+          }
+        }
+      }
+      .contenedor-sidebar-bottom {
+        margin-top: 16%;
+        .sidebar-bottom {
+          p {
+            font-size: 2rem;
+          }
+        }
+      }
     }
   }
 }
+//------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
 // BORDER SUPERIOR DE LA APP DEL CLIMA , EL CODIGO HTML ESTA METIDO EN EL RETURNO DEL COMPONENTE NAVBAR
+@media (max-width: 1570px) {
+  .custom-shape-divider-top-1685652124 {
+    display: none;
+  }
+}
+
 .custom-shape-divider-top-1685652124 {
   position: absolute;
   top: 0;

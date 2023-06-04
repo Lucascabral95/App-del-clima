@@ -8,41 +8,11 @@ import { BsFillCloudRainFill } from "react-icons/bs"
 
 const MasterPage = () => {
 
-    const { dia, temperatura, termica, ciudad, tiempo, humedad, viento, sky, precipitacion,
-    estadoDelTiempo } = useContext(WeatherContext)
+    const { dia, temperatura, tiempo, humedad, viento, sky, precipitacion, 
+        estadoDelTiempo } = useContext(WeatherContext)
 
     return (
         <div className="masterPage">
-
-            <div className="masterPage-contenedor">
-                <span className="masterPage-dia"> {dia} </span>
-                <span className="masterPage-temperatura"> {temperatura} </span>
-                <span className="masterPage-termica"> {termica} </span>
-
-                <div className="masterPage-location">
-                    <MdLocationOn size={38} className="icon-location" />
-                    <span className="masterPage-ciudad"> {ciudad} </span>
-                </div>
-            </div>
-
-
-            {/* <div className="masterPage-datos">
-                <div className="masterPage-datos-datos">
-                    <BsWind color="#0A173B" size={30} className="icon-viento" />
-                    <span>Viento</span>
-                    <span> {viento} </span>
-                </div>
-                <div className="masterPage-datos-datos">
-                    <WiHumidity color="#0A173B" size={30} className="icon-viento" />
-                    <span>Humedad</span>
-                    <span> {humedad} </span>
-                </div>
-                <div className="masterPage-datos-datos">
-                    <TiWeatherSunny color="#0A173B" size={30} className="icon-viento" />
-                    <span>Tiempo</span>
-                    <span> {tiempo} </span>
-                </div>
-            </div> */}
 
             <div className="masterPage-newCard">
                 <div className="masterPage-newCard-arriba">

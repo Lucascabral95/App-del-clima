@@ -1,45 +1,11 @@
 .contenedor-forecast {
-  .forecast-today-weekly {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 70px;
-    margin-right: 70px;
-    margin-bottom: 14px;
-    margin-top: 14px;
-
-    .forecast-today {
-      p {
-        font-size: 1.6rem;
-        font-weight: bolder;
-        color: white;
-      }
-    }
-    .forecast-today:hover {
-      transition: 0.9s;
-      background-color: yellow;
-      p {
-        color: black;
-      }
-    }
-    .forecast-weekly {
-      p {
-        font-size: 1.6rem;
-        font-weight: bolder;
-        color: white;
-      }
-    }
-    .forecast-weekly:hover {
-      transition: 0.9s;
-      background-color: yellow;
-      p {
-        color: black;
-      }
-    }
-  }
+  width: 100%;
 
   .contenedor-porHora {
+    margin-left: 0;
     display: flex;
     overflow-x: scroll;
+    
     .contenedor-contenedor {
       background-color: #f2fdff;
       border-radius: 40px;
@@ -119,6 +85,13 @@
       .porcentRain-adentro{
         background-color: red;
       }
+    }
+  }
+
+  @media (min-width: 425px) and (max-width: 999px){
+    .contenedor-porHora{
+      width: 100%;
+      margin-left: 0%;
     }
   }
 }
