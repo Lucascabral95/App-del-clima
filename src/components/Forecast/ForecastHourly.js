@@ -9,7 +9,8 @@ const Forecast = () => {
     return (
         <div className="contenedor-forecast" >
 
-            <div className="contenedor-porHora" style={bottomSidebar ? {marginLeft: "90px"} : {marginLeft: "270px", width: "calc(100% - 270px)"}} >
+            <div className="contenedor-porHora" >
+            {/* <div className="contenedor-porHora" style={bottomSidebar ? { marginLeft: "140px" } : { marginLeft: "310px", width: "calc(100% - 310px)" }}> */}
                 {forecastHourly.map((item, index) => (
                     <div className="contenedor-contenedor" key={index}>
 

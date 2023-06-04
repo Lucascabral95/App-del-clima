@@ -24,9 +24,9 @@ const Navbar = () => {
       setMenuBurguer(true)
     }
   }
-  
-  
-  
+
+
+
   const handleBottomSidebar = () => {
     if (bottomSidebar) {
       setBottomSidebar(false);
@@ -43,7 +43,7 @@ const Navbar = () => {
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize(); 
+    handleResize();
 
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -54,7 +54,8 @@ const Navbar = () => {
 
     <div className="contenedor-navbar">
 
-      <nav style={bottomSidebar ? { marginLeft: "140px" } : { marginLeft: "310px", width: "calc(100% - 310px)" }}>
+      <nav >
+      {/* <nav style={bottomSidebar ? { marginLeft: "140px" } : { marginLeft: "310px", width: "calc(100% - 310px)" }}> */}
 
         {menuBurguer ? (
           <>
@@ -71,7 +72,7 @@ const Navbar = () => {
 
               <div className="contenedor-buscador2">
                 <div className="buscador2">
-                  <BsSearch size={18} color="#C6C6C6" className="search2" />
+                  <BsSearch size={18} color="#C6C6C6" className="search2 icon-sidebar" />
                   <input type="text" placeholder="Buscar..." />
                 </div>
               </div>
@@ -104,6 +105,7 @@ const Navbar = () => {
             </div>
 
           </>
+
         ) : (
 
           <>
@@ -122,7 +124,7 @@ const Navbar = () => {
               <div className="contenedor-buscador2">
                 {bottomSidebar ? (
                   <div style={{ marginBottom: "36px", marginTop: "36px" }}>
-                    <BsSearch size={26} color="white" className="search2" />
+                    <BsSearch color="white" className="search2" />
                   </div>
                 ) : (
                   <div className="buscador2">
@@ -134,27 +136,29 @@ const Navbar = () => {
 
               <div className="contenedor-sidebar-secciones">
                 <div className="sidebar-secciones">
-                  <div style={{ display: "flex", height: "67px" }}>
-                    <RiDashboardFill size={26} color="white" />
+                  <div style={{ display: "flex", height: "67px" }} >
+                    <RiDashboardFill size={26} color="white" className="icon-sidebar" />
                     <p style={bottomSidebar ? { display: "none" } : { display: "block" }}>Dashboard</p>
                   </div>
                   <div style={{ display: "flex", height: "67px" }}>
-                    <FaWpforms size={26} color="white" />
+                    <FaWpforms size={26} color="white" className="icon-sidebar" />
                     <p style={bottomSidebar ? { display: "none" } : { display: "block" }}>Formulario</p>
                   </div>
                   <div style={{ display: "flex", height: "67px" }}>
-                    <SiAboutdotme size={26} color="white" />
+                    <SiAboutdotme size={26} color="white" className="icon-sidebar" />
                     <p style={bottomSidebar ? { display: "none" } : { display: "block" }}>Acerca de nosotros</p>
                   </div>
                 </div>
               </div>
-              {bottomSidebar ? <BsLayoutSidebarInset style={{ marginLeft: "26px" }} size={26} color="white" onClick={handleBottomSidebar} /> : <BsLayoutSidebarInsetReverse style={{ marginLeft: "26px" }} size={26} color="white" onClick={handleBottomSidebar} />}
+
+              {bottomSidebar ? <BsLayoutSidebarInset style={{ marginLeft: "26px" }} size={26} color="white" onClick={handleBottomSidebar} className="icon-sidebar-action" />
+                : <BsLayoutSidebarInsetReverse style={{ marginLeft: "26px" }} size={26} color="white" onClick={handleBottomSidebar} className="icon-sidebar-action" />}
 
 
               <div className="contenedor-sidebar-bottom">
                 <div className="sidebar-bottom">
-                  <BiLogOutCircle size={26} color="white" />
-                  <p style={bottomSidebar ? { display: "none" } : { display: "block" }}>Logout</p>
+                  <BiLogOutCircle size={26} color="white" className="icon-logout" />
+                  <p style={bottomSidebar ? { display: "none" } : { display: "block" }} >Logout</p>
                 </div>
               </div>
 
@@ -167,9 +171,9 @@ const Navbar = () => {
             </div>
 
 
-            <BiMenuAltLeft className="menuu-hambuguesa" onClick={handleMenu} style={{ display: "none"}} />
+            <BiMenuAltLeft className="menuu-hambuguesa" onClick={handleMenu} style={{ display: "none" }} />
 
-              <div className="buscador">
+            <div className="buscador">
               <BsSearch size={22} color="black" className="buscador-search" />
               <input type="text" placeholder="Buscar..." size={40} onChange={(event) => setLocation(event.target.value)} />
             </div>

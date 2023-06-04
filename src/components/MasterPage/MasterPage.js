@@ -1,7 +1,6 @@
 import { WeatherContext } from "../../Context/WeatherContext.js";
 import React, { useContext } from "react"
 import "./MasterPage.scss"
-import { MdLocationOn } from 'react-icons/md';
 import { BsWind } from "react-icons/bs"
 import { WiHumidity } from "react-icons/wi"
 import { BsFillCloudRainFill } from "react-icons/bs"

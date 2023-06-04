@@ -1,0 +1,9 @@
+.pageCentral{
+    display: block;
+    width: 100%;
+    
+    @media (max-width: 1000px){
+        margin-left: 0px !important;
+        width: 100% !important;
+    }
+}

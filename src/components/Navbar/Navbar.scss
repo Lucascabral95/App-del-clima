@@ -14,14 +14,11 @@
     left: 0;
     height: 100vh;
     width: 260px;
-    // width: 100px;
     background-color: #0f1827;
     padding-top: 54px;
     border-radius: 14px;
 
     .contenedor-sidebar-logo {
-      // display: flex;
-      // justify-content: center;
       margin-left: 16px;
       .sidebar-logo {
         margin-top: 32px;
@@ -47,6 +44,17 @@
     .contenedor-buscador2 {
       display: flex;
       justify-content: center;
+      .search2 {
+        font-size: 26px;
+      }
+      .search2:hover {
+        transition: 0.4s;
+        transform: scale(1.6);
+        background-color: white;
+        color: #020063 !important;
+        border-radius: 5px;
+        padding: 4px;
+      }
       .buscador2 {
         display: flex;
         background-color: #e7e7e9;
@@ -83,6 +91,21 @@
           margin-bottom: 15%;
           bottom: 3px;
         }
+        p:hover{
+          color: yellow;
+        }
+        .icon-sidebar {
+          font-size: 26px;
+        }
+        .icon-sidebar:hover {
+          transition: 0.4s;
+          transform: scale(1.6);
+          background-color: white;
+          color: #020063 !important;
+          border-radius: 5px;
+          padding: 4px;
+          margin-right: 16px;
+        }
       }
     }
     .contenedor-sidebar-bottom {
@@ -101,6 +124,22 @@
           font-family: Roboto;
         }
       }
+      .icon-logout:hover{
+        transition: 0.4s;
+        transform: scale(1.6);
+        background-color: white;
+        color: #020063 !important;
+        border-radius: 5px;
+        padding: 4px;  
+      }
+    }
+    .icon-sidebar-action:hover{
+      transition: 0.4s;
+      transform: scale(1.6);
+      background-color: white;
+      color: #020063 !important;
+      border-radius: 5px;
+      padding: 4px;
     }
   }
 
@@ -293,7 +332,7 @@
         display: flex;
         justify-content: center;
       }
-      .menuu-hambuguesa{
+      .menuu-hambuguesa {
         display: block !important;
         margin-left: 1%;
       }
@@ -347,6 +386,7 @@
     display: none;
   }
 }
+
 
 .custom-shape-divider-top-1685652124 {
   position: absolute;
