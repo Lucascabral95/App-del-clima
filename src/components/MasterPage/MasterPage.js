@@ -35,7 +35,7 @@ const MasterPage = () => {
                     <div className="masterPage-newCard-abajo-div">
                         <BsWind size={40} color="blue" className="icon-react" />
                         <span>Velocidad del viento</span>
-                        <span> {viento} </span>
+                        <span> {viento[0]} </span>
                     </div>
                     <div className="masterPage-newCard-abajo-div">
                          <BsFillCloudRainFill size={40} color="blue" className="icon-react" />

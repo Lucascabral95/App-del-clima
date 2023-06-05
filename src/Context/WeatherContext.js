@@ -7,7 +7,7 @@ export const WeatherProvider = ({ children }) => {
 
     const [temperatura, setTemperatura] = useState(null)
     const [ciudad, setCiudad] = useState(null)
-    const [viento, setViento] = useState(null)
+    const [viento, setViento] = useState("")
     const [humedad, setHumedad] = useState(null)
     const [tiempo, setTiempo] = useState(null)
     const [termica, setTermica] = useState(null)
@@ -20,6 +20,11 @@ export const WeatherProvider = ({ children }) => {
     const [estadoDelTiempo, setEstadoDelTiempo] = useState("")
     const [bottomSidebar, setBottomSidebar] = useState(true)
     const [temperaturaMinimaMaxima, setTemperaturaMinimaMaxima] = useState([])
+    const [presion, setPresion] = useState("")
+    const [uv, setUv] = useState("")
+    const [ubication, setUbication] = useState("")
+    const [aparicionSol, setAparicionSol] = useState("")
+    const [nubes, setNubes] = useState("")
 
     //LLAMADA PARA DATOS DIARIOS
     const fechaActual = new Date();
@@ -56,12 +61,47 @@ export const WeatherProvider = ({ children }) => {
             const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&lang=es&units=metric`);
             const data = response.data;
             if (data.name) {
+                const presionMedia = data.main.pressure
+                const presionBaja = data.main.sea_level
+                const presionAlta = data.main.grnd_level
+                if (presionBaja !== undefined && presionAlta !== undefined) {
+                    const presiones = [presionMedia, presionBaja, presionAlta];
+                    setPresion(presiones);
+                    console.log(...presiones);
+                } else {
+                    console.log("Error");
+                }
+
                 const vientoKmh = parseInt(data.wind.speed) * 3.6;
+                const vientoDeg = data.wind.deg
+                const vientoFull = [vientoKmh, vientoDeg]
+                setViento(vientoFull);
+
+                const lon = data.coord.lon
+                const lat = data.coord.lat
+                const coordenadas = [lon, lat]
+                setUbication(coordenadas)
+
+                const salidaDelSol = data.sys.sunrise
+                const puestaDelSol = data.sys.sunset
+                const sunriseType = new Date(salidaDelSol * 1000)
+                const sunsetType = new Date(puestaDelSol * 1000)
+                const hoursSunrise = sunriseType.getHours()
+                const minutesSunrise = sunriseType.getMinutes()
+                const hoursSunset = sunsetType.getHours()
+                const minutesSunset = sunsetType.getMinutes()
+                const horaSalidaDelSol = `${hoursSunrise}:${minutesSunrise}`
+                const horaPuestaDelSol = `${hoursSunset}:${minutesSunset}`
+                const puestaYSalidaDelSol = [horaSalidaDelSol, horaPuestaDelSol]
+                setAparicionSol(puestaYSalidaDelSol)
+
+                const nubecitas = data.clouds.all
+                setNubes(nubecitas)
+
+                setTiempo(`${data.weather[0].description}`);
                 setTemperatura(`${data.main.temp.toFixed(1)}°C`);
                 setCiudad(data.name);
                 setHumedad(`${data.main.humidity}%`);
-                setViento(`${vientoKmh} kms/h`);
-                setTiempo(`${data.weather[0].description}`);
                 setTermica(`${data.main.feels_like}°`);
                 setSky(traducciones[data.weather[0].main]);
             } else {
@@ -119,93 +159,57 @@ export const WeatherProvider = ({ children }) => {
     }
 
     // // LLAMADA PARA PRONOSTICOS CADA 3 HORAS
-    // const pronosticoPorHora = async (ciudad2) => {
-    //     try {
-    //         const response2 = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${ciudad2}&appid=${apiKey}&lang=es&units=metric`);            const data2 = await response2.data;
-    //         if (data2 && data2.list && data2.list.length > 0) {
-    //             const pronostico = data2.list.slice(0, 8).map((item) => {
-    //                 const fecha = new Date(item.dt_txt);
-    //                 const options = { weekday: 'long' };
-    //                 const fechaFormato = fecha.toLocaleString('es', options).replace(/^\w/, c => c.toUpperCase());
-    //                 const horaFormato = fecha.toLocaleString('en-US', { hour: 'numeric', hour12: true });
-
-    //                 const clima2 = iconDelClima(item.weather[0].main)
-    //                 const climaPosta = clima2
-    //                 setEstadoDelTiempo(climaPosta); 
-
-    //                 const probabilidadLluvia = item.pop * 100; 
-    //                 console.log(`${probabilidadLluvia}%`);
-    //                 setPrecipitaicon(probabilidadLluvia)
-
-    //                 return {
-    //                     climaSi: climaPosta,
-    //                     fecha: fechaFormato,
-    //                     hora: horaFormato,
-    //                     clima: item.weather[0].main,
-    //                     temperatura: item.main.temp,
-    //                     descripcion: item.weather[0].description,
-    //                     probabilidadLluvia: probabilidadLluvia
-    //                 };
-    //             });
-    //             setForecastHourly(pronostico);
-    //         } else {
-    //             console.log("No se encontraron datos para la ciudad");
-    //         }
-    //     } catch (error) {
-    //         console.log("Error al obtener el pronóstico por hora", error);
-    //     }
-    // };
     const pronosticoPorHora = async (ciudad2) => {
         try {
-          const response2 = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${ciudad2}&appid=${apiKey}&lang=es&units=metric`);
-          const data2 = await response2.data;
-          if (data2 && data2.list && data2.list.length > 0) {
-            const temperaturas = data2.list.slice(0, 8).map((item) => item.main.temp);
-            const temperaturaMinima = Math.min(...temperaturas);
-            const temperaturaMaxima = Math.max(...temperaturas);
-            
-            // console.log(`Temperatura mínima: ${temperaturaMinima}. Temperatura maxima: ${temperaturaMaxima}`);
+            const response2 = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${ciudad2}&appid=${apiKey}&lang=es&units=metric`);
+            const data2 = await response2.data;
+            if (data2 && data2.list && data2.list.length > 0) {
+                const temperaturas = data2.list.slice(0, 8).map((item) => item.main.temp);
+                const temperaturaMinima = Math.min(...temperaturas);
+                const temperaturaMaxima = Math.max(...temperaturas);
+                const rangoTemperatura = [temperaturaMinima, temperaturaMaxima]
+                setTemperaturaMinimaMaxima(rangoTemperatura)
 
-            const rangoTemperatura = [temperaturaMinima, temperaturaMaxima]
-            setTemperaturaMinimaMaxima(rangoTemperatura)
-      
-            const pronostico = data2.list.slice(0, 8).map((item) => {
-              const fecha = new Date(item.dt_txt);
-              const options = { weekday: 'long' };
-              const fechaFormato = fecha.toLocaleString('es', options).replace(/^\w/, c => c.toUpperCase());
-              const horaFormato = fecha.toLocaleString('en-US', { hour: 'numeric', hour12: true });
-      
-              const clima2 = iconDelClima(item.weather[0].main);
-              const climaPosta = clima2;
-              setEstadoDelTiempo(climaPosta);
-      
-              const probabilidadLluvia = item.pop * 100; 
-              setPrecipitaicon(probabilidadLluvia);
-      
-              return {
-                climaSi: climaPosta,
-                fecha: fechaFormato,
-                hora: horaFormato,
-                clima: item.weather[0].main,
-                temperatura: item.main.temp,
-                descripcion: item.weather[0].description,
-                probabilidadLluvia: probabilidadLluvia
-              };
-            });
-      
-            setForecastHourly(pronostico);
-          } else {
-            console.log("No se encontraron datos para la ciudad");
-          }
+                const pronostico = data2.list.slice(0, 8).map((item) => {
+                    const fecha = new Date(item.dt_txt);
+                    const options = { weekday: 'long' };
+                    const fechaFormato = fecha.toLocaleString('es', options).replace(/^\w/, c => c.toUpperCase());
+                    const horaFormato = fecha.toLocaleString('en-US', { hour: 'numeric', hour12: true });
+
+                    const clima2 = iconDelClima(item.weather[0].main);
+                    const climaPosta = clima2;
+                    setEstadoDelTiempo(climaPosta);
+
+                    const probabilidadLluvia = item.pop * 100;
+                    setPrecipitaicon(probabilidadLluvia);
+
+                    return {
+                        climaSi: climaPosta,
+                        fecha: fechaFormato,
+                        hora: horaFormato,
+                        clima: item.weather[0].main,
+                        temperatura: item.main.temp,
+                        descripcion: item.weather[0].description,
+                        probabilidadLluvia: probabilidadLluvia
+                    };
+                });
+
+                setForecastHourly(pronostico);
+            } else {
+                console.log("No se encontraron datos para la ciudad");
+            }
         } catch (error) {
-          console.log("Error al obtener el pronóstico por hora", error);
+            console.log("Error al obtener el pronóstico por hora", error);
         }
-      };
-      
+    };
+
     // // LLAMADA PARA PRONOSTICOS CADA 3 HORAS
 
 
     useEffect(() => {
+        localStorage.setItem('lastLocation', JSON.stringify(location));
+
+
         temp(location);
         setDia(fechaConDiaAbreviado)
         pronosticoPorHora(location);
@@ -240,15 +244,25 @@ export const WeatherProvider = ({ children }) => {
             precipitacion,
             setPrecipitaicon,
             estadoDelTiempo,
-            setEstadoDelTiempo, 
-            bottomSidebar, 
-            setBottomSidebar, 
-            temperaturaMinimaMaxima, 
-            setTemperaturaMinimaMaxima
+            setEstadoDelTiempo,
+            bottomSidebar,
+            setBottomSidebar,
+            temperaturaMinimaMaxima,
+            setTemperaturaMinimaMaxima,
+            presion,
+            setPresion,
+            uv,
+            setUv,
+            ubication,
+            setUbication,
+            aparicionSol,
+            setAparicionSol,
+            nubes,
+            setNubes
         }}>
             {children}
         </WeatherContext.Provider>
 
     )
 
-    }
+}
