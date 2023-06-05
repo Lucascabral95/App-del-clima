@@ -16,10 +16,10 @@ const PageCentral = () => {
         <div className="pageCentral" style={bottomSidebar ? { marginLeft: "140px", width: "calc(100% - 140px)" } : { marginLeft: "310px", width: "calc(100% - 310px)" }}>
 
           <Navbar />
-          {/* <MasterPage /> */}
+          <MasterPage />
 
           {/* <ForecastWeekly /> */}
-          {/* <Forecast />  */}
+          <Forecast /> 
           <Cards />
 
         </div>
