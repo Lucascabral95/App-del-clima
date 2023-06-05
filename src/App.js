@@ -13,7 +13,8 @@ function App() {
   const horarioActual = horario.getHours()
 
   return (
-    <div style={horarioActual > 6 && horarioActual <= 19 ? { background: "#E2C6F6" } : { background: "white" }}>
+    // <div style={horarioActual > 6 && horarioActual <= 19 ? { background: "#E2C6F6" } : { background: "white" }}>
+    <div >
 
       <WeatherProvider >
 

@@ -70,23 +70,23 @@
     }
   }
 
-  .porcentRain{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  // .porcentRain{
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
     
-    .porcentRain-interior{
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: solid black 4px;
-      background-color: white;
-      .porcentRain-adentro{
-        background-color: red;
-      }
-    }
-  }
+  //   .porcentRain-interior{
+  //     width: 200px;
+  //     height: 200px;
+  //     border-radius: 50%;
+  //     overflow: hidden;
+  //     border: solid black 4px;
+  //     background-color: white;
+  //     .porcentRain-adentro{
+  //       background-color: red;
+  //     }
+  //   }
+  // }
 
   @media (min-width: 425px) and (max-width: 999px){
     .contenedor-porHora{

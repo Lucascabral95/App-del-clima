@@ -37,14 +37,14 @@ const Forecast = () => {
                 ))}
             </div>
 
-            <div className="porcentRain">
+            {/* <div className="porcentRain">
 
                 <div className="porcentRain-interior" >
                     <div className="porcentRain-adentro" style={{ height: `${precipitacion}%` }}>
                     </div>
                 </div>
 
-            </div>
+            </div> */}
             
         </div>
     );
