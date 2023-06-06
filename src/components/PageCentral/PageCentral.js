@@ -20,14 +20,12 @@ const PageCentral = () => {
 
       {/* <div className="ordenador-pageCentral" > */}
       <div className="interior">
-
-        <div>
+        <div className="interior-divv">
+          <div>
           <MasterPage />
-          <Cards />
-        </div>
-        <div className="interior-probabilidad">
           <ProbabilidadLluvia />
-
+          </div>
+          <Cards />
         </div>
       </div>
       {/* <ForecastWeekly /> */}

@@ -1,8 +1,8 @@
 .probabilidad-lluvia {
   width: 360px;
-//   height: 234px;
-  height: 300px;
-  background-color: #0f1827;
+  height: 234px;
+  // height: 300px;
+  background-color: black;
   border-radius: 15px;
   margin: auto;
 
@@ -43,12 +43,12 @@
         height: 180px;
         margin-left: 10px;
         border-radius: 6px;
-        background-color: yellow;
+        background-color: white;
         display: flex;
         align-items: end;
         .barra-probabilidad-interior {
           width: 15px;
-          background-color: red;
+          background-color: blue;
           border-radius: 5px;
         }
       }

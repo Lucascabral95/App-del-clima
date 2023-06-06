@@ -1,8 +1,9 @@
 .contenedor-navbar {
   display: block;
   margin-bottom: 4%;
-  margin-top: 5%;
-
+  // margin-top: 5%;
+  padding-top: 2%;
+  
   * {
     text-decoration: none;
     list-style: none;
@@ -17,7 +18,7 @@
     background-color: #0f1827;
     padding-top: 54px;
     border-radius: 14px;
-
+    
     .contenedor-sidebar-logo {
       margin-left: 16px;
       .sidebar-logo {
@@ -142,12 +143,13 @@
       padding: 4px;
     }
   }
-
+  
   nav {
-    background-color: white;
     display: flex;
     justify-content: space-between;
-
+    // background-color: white;
+    background-color: #41BDEC;
+    
     .menuu-hambuguesa {
       font-size: 40px;
     }
@@ -236,7 +238,7 @@
   // SIDEBAR MOBILE
   .sidebar-responsive {
     position: fixed;
-    top: 0;
+    top: 0 ;
     left: 0;
     width: 100%;
     height: 100vh;
@@ -317,28 +319,9 @@
       }
     }
   }
-
-  @media (max-width: 999px) {
-    nav {
-      display: flex;
-      justify-content: space-between;
-      margin: 0% !important;
-      .logo {
-        display: flex;
-        justify-content: end;
-        padding-right: 2%;
-      }
-      .buscador {
-        display: flex;
-        justify-content: center;
-      }
-      .menuu-hambuguesa {
-        display: block !important;
-        margin-left: 1%;
-      }
-    }
-  }
-
+}
+  
+  
   @media (min-width: 425px) and (max-width: 999px) {
     .sidebar {
       display: none;
@@ -374,6 +357,26 @@
       }
     }
   }
+
+@media (max-width: 999px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0% !important;
+    .logo {
+      display: flex;
+      justify-content: end;
+      padding-right: 2%;
+    }
+    .buscador {
+      display: flex;
+      justify-content: center;
+    }
+    .menuu-hambuguesa {
+      display: block !important;
+      margin-left: 1%;
+    }
+  }
 }
 
 @media (min-width: 150px) and (max-width: 420px){
@@ -386,29 +389,29 @@
 //------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
 // BORDER SUPERIOR DE LA APP DEL CLIMA , EL CODIGO HTML ESTA METIDO EN EL RETURNO DEL COMPONENTE NAVBAR
-@media (max-width: 1570px) {
-  .custom-shape-divider-top-1685652124 {
-    display: none;
-  }
-}
+// @media (max-width: 1570px) {
+//   .custom-shape-divider-top-1685652124 {
+//     display: none;
+//   }
+// }
 
 
-.custom-shape-divider-top-1685652124 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
+// .custom-shape-divider-top-1685652124 {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   overflow: hidden;
+//   line-height: 0;
+// }
 
-.custom-shape-divider-top-1685652124 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 98px;
-}
+// .custom-shape-divider-top-1685652124 svg {
+//   position: relative;
+//   display: block;
+//   width: calc(100% + 1.3px);
+//   height: 98px;
+// }
 
-.custom-shape-divider-top-1685652124 .shape-fill {
-  fill: #020063;
-}
+// .custom-shape-divider-top-1685652124 .shape-fill {
+//   fill: #020063;
+// }
