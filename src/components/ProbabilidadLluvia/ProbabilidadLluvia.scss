@@ -1,0 +1,57 @@
+.probabilidad-lluvia {
+  width: 360px;
+//   height: 234px;
+  height: 300px;
+  background-color: #0f1827;
+  border-radius: 15px;
+  margin: auto;
+
+  .titulo-probabilidad-lluvia{
+    font-weight: bolder;
+    font-family: Roboto;
+    color: white;
+    font-size: 1.8rem;
+    position: relative; top: 14px;
+    text-align: center;
+    margin-bottom: 22px;
+  }
+
+  .probabilidad-interior {
+    display: flex;
+    justify-content: space-evenly;
+    .descripcion-probabilidad {
+      display: flex;
+      flex-direction: column;
+      margin-right: 8px;
+      margin-left: 8px;
+      margin-top: 18px;
+      .indicador-probabilidad {
+        color: white;
+        font-weight: 600;
+        font-family: Roboto;
+      }
+    }
+    .probabilidad-interior-carga {
+      margin-top: 22px;
+      p {
+        font-weight: 600;
+        font-family: Roboto;
+        color: white;
+      }
+      .barra-probabilidad {
+        width: 15px;
+        height: 180px;
+        margin-left: 10px;
+        border-radius: 6px;
+        background-color: yellow;
+        display: flex;
+        align-items: end;
+        .barra-probabilidad-interior {
+          width: 15px;
+          background-color: red;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

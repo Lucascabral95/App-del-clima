@@ -164,7 +164,7 @@ export const WeatherProvider = ({ children }) => {
             const response2 = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${ciudad2}&appid=${apiKey}&lang=es&units=metric`);
             const data2 = await response2.data;
             if (data2 && data2.list && data2.list.length > 0) {
-                const temperaturas = data2.list.slice(0, 8).map((item) => item.main.temp);
+                const temperaturas = data2.list.slice(0, 7).map((item) => item.main.temp);
                 const temperaturaMinima = Math.min(...temperaturas);
                 const temperaturaMaxima = Math.max(...temperaturas);
                 const rangoTemperatura = [temperaturaMinima, temperaturaMaxima]

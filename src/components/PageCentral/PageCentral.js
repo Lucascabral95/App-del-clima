@@ -6,24 +6,36 @@ import Forecast from "../Forecast/ForecastHourly.js"
 import MasterPage from "../MasterPage/MasterPage.js"
 import ForecastWeekly from "../Forecast/ForecastWeekly.js"
 import Cards from "../Cards/Cards.js"
+import ProbabilidadLluvia from "../ProbabilidadLluvia/ProbabilidadLluvia.js"
 
 
 const PageCentral = () => {
 
-    const { bottomSidebar } = useContext(WeatherContext)
+  const { bottomSidebar } = useContext(WeatherContext)
 
-    return (
-        <div className="pageCentral" style={bottomSidebar ? { marginLeft: "140px", width: "calc(100% - 140px)" } : { marginLeft: "310px", width: "calc(100% - 310px)" }}>
+  return (
+    <div className="pageCentral" style={bottomSidebar ? { marginLeft: "140px", width: "calc(100% - 140px)" } : { marginLeft: "310px", width: "calc(100% - 310px)" }}>
 
-          <Navbar />
+      <Navbar />
+
+      {/* <div className="ordenador-pageCentral" > */}
+      <div className="interior">
+
+        <div>
           <MasterPage />
-
-          {/* <ForecastWeekly /> */}
-          <Forecast /> 
           <Cards />
+        </div>
+        <div className="interior-probabilidad">
+          <ProbabilidadLluvia />
 
         </div>
-    )
+      </div>
+      {/* <ForecastWeekly /> */}
+      <Forecast />
+      {/* </div> */}
+
+    </div>
+  )
 }
 
 export default PageCentral

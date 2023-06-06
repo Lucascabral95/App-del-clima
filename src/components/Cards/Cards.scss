@@ -9,6 +9,7 @@
     border: solid 0.5px gray;
     margin: auto;
     margin-top: 20px;
+background-color: white;
     .icon-time-div {
       display: flex;
       align-items: center;
@@ -44,6 +45,7 @@
     border: solid 0.5px gray;
     margin: auto;
     margin-top: 20px;
+    background-color: white;
     .icon-time-div {
       display: flex;
       align-items: center;
@@ -79,6 +81,7 @@
     border: solid 0.5px gray;
     margin: auto;
     margin-top: 20px;
+    background-color: white;
     .icon-time-div {
       display: flex;
       align-items: center;
@@ -115,6 +118,7 @@
     border: solid 0.5px gray;
     margin: auto;
     margin-top: 20px;
+    background-color: white;
     .icon-time-div {
       display: flex;
       align-items: center;
@@ -153,6 +157,7 @@
     border: solid 0.5px gray;
     margin: auto;
     margin-top: 20px;
+    background-color: white;
     .icon-time-div {
       display: flex;
       align-items: center;
@@ -190,6 +195,7 @@
     border: solid 0.5px gray;
     margin: auto;
     margin-top: 20px;
+    background-color: white;
     .icon-time-div {
       display: flex;
       flex-direction: column;
@@ -229,117 +235,3 @@
     justify-content: center;
   }
 }
-// .cards {
-//   background-color: black;
-//   border-radius: 25px;
-//   border: solid yellow 5px;
-//   height: 500px;
-//   width: 1200px;
-//   display: flex;
-//   justify-content: space-evenly;
-//   align-items: center;
-//   .contenedor-porcentRain {
-//     width: 550px;
-//     height: 200px;
-//     border-radius: 20px;
-//     display: flex;
-//     justify-content: space-evenly;
-//     background-color: #f4c606;
-//     .contenedor-datos-porcentRain {
-//       display: flex;
-//       align-items: center;
-//       .datos-porcentRain {
-//         align-items: center;
-
-//         h3 {
-//           color: black;
-//           font-family: Roboto;
-//           font-weight: 700;
-//           font-size: 1.8rem;
-//         }
-//         p {
-//           color: blue;
-//           font-size: 1.2rem;
-//           font-weight: 500;
-//           font-family: Roboto;
-//         }
-//         h5 {
-//           color: black;
-//           font-family: Roboto;
-//           font-weight: 600;
-//           font-size: 1.6rem;
-//         }
-//       }
-//     }
-//     .porcentRain {
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-
-//       .porcentRain-interior {
-//         width: 150px;
-//         height: 150px;
-//         border-radius: 50%;
-//         overflow: hidden;
-//         border: solid #e9eff4 1px;
-//         background-color: #007dd6;
-//         .porcentRain-adentro {
-//           background-color: #151638;
-//           p {
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//             color: white;
-//             font-size: 1.5rem;
-//             position: relative;
-//             top: 85%;
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   .contenedor-minima-maxima {
-//     width: 550px;
-//     height: 200px;
-//     border-radius: 20px;
-//     background-color: #f4c606;
-//     padding-left: 45px;
-//     padding-right: 45px;
-//     padding-top: 25px;
-//     padding-bottom: 45px;
-//     h2 {
-//       text-align: center;
-//       font-family: Roboto;
-//       font-weight: 600;
-//     }
-//     .minima-promedio-maxima {
-//       display: flex;
-//       justify-content: space-between;
-//       margin-top: 25px;
-//       p {
-//         font-family: Roboto;
-//         font-weight: 600;
-//       }
-//     }
-//     .minima-maxima-div {
-//       p {
-//         color: blue;
-//       }
-//     }
-//   }
-
-//   @media (min-width: 375px) and (max-width: 1400px) {
-//     .card {
-//       .contenedor-porcentRain {
-//         display: block;
-//       }
-//       .porcentRain{
-//         display: block;
-//       }
-//       .contenedor-minima-maxima{
-//         display: block;
-//       }
-//     }
-//   }
-// }

@@ -13,8 +13,10 @@ function App() {
   const horarioActual = horario.getHours()
 
   return (
-    // <div style={horarioActual > 6 && horarioActual <= 19 ? { background: "#E2C6F6" } : { background: "white" }}>
-    <div >
+    
+    <div style={{ backgroundColor: "violet"}}>
+
+
 
       <WeatherProvider >
 
@@ -26,6 +28,7 @@ function App() {
       </WeatherProvider>
 
     </div>
+
   );
 }
 

@@ -1,16 +1,16 @@
 import "./ForecastHourly.scss"
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { WeatherContext } from "../../Context/WeatherContext.js";
 
 const Forecast = () => {
-    const { forecastHourly, location, precipitacion, bottomSidebar } = useContext(WeatherContext);
+    const { forecastHourly, location } = useContext(WeatherContext);
 
 
     return (
         <div className="contenedor-forecast" >
 
             <div className="contenedor-porHora" >
-            {/* <div className="contenedor-porHora" style={bottomSidebar ? { marginLeft: "140px" } : { marginLeft: "310px", width: "calc(100% - 310px)" }}> */}
+
                 {forecastHourly.map((item, index) => (
                     <div className="contenedor-contenedor" key={index}>
 
@@ -36,15 +36,6 @@ const Forecast = () => {
                     </div>
                 ))}
             </div>
-
-            {/* <div className="porcentRain">
-
-                <div className="porcentRain-interior" >
-                    <div className="porcentRain-adentro" style={{ height: `${precipitacion}%` }}>
-                    </div>
-                </div>
-
-            </div> */}
             
         </div>
     );
