@@ -12,9 +12,17 @@ function App() {
   const horario = new Date()
   const horarioActual = horario.getHours()
 
+  function colorRandom() {
+    const colorAzar = Math.round(Math.random())
+    return colorAzar === 0 ? "#41BDEC" : "black"
+  }
+
+  const color = colorRandom()
+
+
   return (
     
-    <div style={{ backgroundColor: "#41BDEC"}}>
+    <div style={{ backgroundColor: color }}>
 
 
 

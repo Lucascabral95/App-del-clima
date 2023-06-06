@@ -11,6 +11,9 @@ const ProbabilidadLluvia = () => {
     <>
       <div className="probabilidad-lluvia">
           {/* <h2 className="titulo-probabilidad-lluvia">Probabilidad de lluvia</h2> */}
+            {/* <div className="punteada-rainy"> </div>
+            <div className="punteada-sunny"> </div>
+            <div className="punteada-heavy"> </div> */}
         <div className="probabilidad-interior" >
 
 

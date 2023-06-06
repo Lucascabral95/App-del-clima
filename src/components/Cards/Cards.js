@@ -12,8 +12,7 @@ import { AiFillCloud } from "react-icons/ai"
 
 const Cards = () => {
 
-    const { precipitacion, temperaturaMinimaMaxima, temperatura, presion, uv, viento,
-        ubication, aparicionSol, humedad, nubes } = useContext(WeatherContext)
+    const { presion, viento, ubication, aparicionSol, humedad, nubes } = useContext(WeatherContext)
 
     return (
         <div className="cards">

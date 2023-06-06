@@ -25,6 +25,7 @@ export const WeatherProvider = ({ children }) => {
     const [ubication, setUbication] = useState("")
     const [aparicionSol, setAparicionSol] = useState("")
     const [nubes, setNubes] = useState("")
+    const [ traslacionX, setTraslacionX ] = useState(0)
 
     //LLAMADA PARA DATOS DIARIOS
     const fechaActual = new Date();
@@ -258,7 +259,9 @@ export const WeatherProvider = ({ children }) => {
             aparicionSol,
             setAparicionSol,
             nubes,
-            setNubes
+            setNubes, 
+            traslacionX, 
+            setTraslacionX
         }}>
             {children}
         </WeatherContext.Provider>

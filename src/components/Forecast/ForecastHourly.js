@@ -1,18 +1,38 @@
 import "./ForecastHourly.scss"
 import { useContext } from "react";
 import { WeatherContext } from "../../Context/WeatherContext.js";
+import { BsFillArrowRightCircleFill } from "react-icons/bs"
+import { BsArrowLeftCircleFill } from "react-icons/bs"
 
 const Forecast = () => {
-    const { forecastHourly, location } = useContext(WeatherContext);
+    const { forecastHourly, location, traslacionX, setTraslacionX } = useContext(WeatherContext);
 
+    const handleNext = () => {
+        const maxTranslateX = -102 * (forecastHourly.length - 1); // Máximo desplazamiento permitido
+
+        if (traslacionX > maxTranslateX) {
+            setTraslacionX(prevTraslacionX => prevTraslacionX - 102);
+        }
+    };
+
+    const handlePrev = () => {
+        const maxTranslateX = 0; // Máximo desplazamiento permitido hacia atrás
+
+        if (traslacionX < maxTranslateX) {
+            setTraslacionX(prevTraslacionX => prevTraslacionX + 102);
+        }
+    };
 
     return (
         <div className="contenedor-forecast" >
 
-            <div className="contenedor-porHora" >
+            <BsArrowLeftCircleFill size={40} color="black" onClick={handlePrev} className="boton-prev" />
+            <BsFillArrowRightCircleFill size={40} color="black" onClick={handleNext} className="boton-next" />
 
+            <div className="contenedor-porHora" >
                 {forecastHourly.map((item, index) => (
-                    <div className="contenedor-contenedor" key={index}>
+                    <div className="contenedor-contenedor" key={index}
+                        style={{ transform: `translateX(${traslacionX}px)` }} >
 
                         <div className="contenedor-card-forecast">
                             <div className="div-card-hora">
@@ -36,7 +56,7 @@ const Forecast = () => {
                     </div>
                 ))}
             </div>
-            
+
         </div>
     );
 };

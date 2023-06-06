@@ -18,19 +18,27 @@ const PageCentral = () => {
 
       <Navbar />
 
-      {/* <div className="ordenador-pageCentral" > */}
       <div className="interior">
         <div className="interior-divv">
           <div>
-          <MasterPage />
-          <ProbabilidadLluvia />
+            <MasterPage />
+            <ProbabilidadLluvia />
           </div>
           <Cards />
         </div>
       </div>
-      {/* <ForecastWeekly /> */}
-      <Forecast />
-      {/* </div> */}
+
+      <div className="contenedor-horaSemana">
+        <div className="horaSemana">
+          <h2>Pronostico cada 3 horas</h2>
+          <Forecast />
+        </div>
+        <div className="horaSemana">
+          <h2>Pronostico por dia</h2>
+          {/* <ForecastWeekly /> */}
+          <h4>PROXIMAMAMENTE</h4>
+        </div>
+      </div>
 
     </div>
   )

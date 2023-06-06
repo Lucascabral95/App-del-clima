@@ -1,10 +1,12 @@
 .contenedor-forecast {
   width: 100%;
-
   .contenedor-porHora {
     margin-left: 0;
     display: flex;
     overflow-x: scroll;
+    padding-top: 6px;
+    padding-bottom: 14px;
+    overflow: hidden;
     
     .contenedor-contenedor {
       background-color: #f2fdff;
@@ -70,24 +72,6 @@
     }
   }
 
-  // .porcentRain{
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-    
-  //   .porcentRain-interior{
-  //     width: 200px;
-  //     height: 200px;
-  //     border-radius: 50%;
-  //     overflow: hidden;
-  //     border: solid black 4px;
-  //     background-color: white;
-  //     .porcentRain-adentro{
-  //       background-color: red;
-  //     }
-  //   }
-  // }
-
   @media (min-width: 425px) and (max-width: 999px){
     .contenedor-porHora{
       width: 100%;
@@ -95,3 +79,5 @@
     }
   }
 }
+
+
